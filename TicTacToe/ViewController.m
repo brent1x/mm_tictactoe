@@ -39,113 +39,129 @@
 
 }
 
-#pragma mark Tap Methods
+#pragma mark - Tap Logic Methods
 
 - (void)findLabelUsingPoint:(CGPoint)point {
+     
+//    int i = 1;
+//
+//    for (id item in self.labelSet) {
+//    if (CGRectContainsPoint(item.frame, point)) {
+//        self.whichLabelPressed = i;self.whichPlayerCounter++;
+//        if (self.whichPlayerCounter % 2 == 0) {
+//            self.labelOne.text = @"O";
+//            self.labelOne.textColor = [UIColor redColor];
+//        } else{
+//            self.labelOne.text = @"X";
+//            self.labelOne.textColor = [UIColor blueColor];
+//        }
+//    }
+//        i++;
+//    }
 
-    /*int i = 1;
-
-    for (id item in self.labelSet) {
-    if (CGRectContainsPoint(item.frame, point)) {
-        self.whichLabelPressed = i;self.whichPlayerCounter++;
-        if (self.whichPlayerCounter % 2 == 0) {
-            self.labelOne.text = @"O";
-            self.labelOne.textColor = [UIColor redColor];
-        } else{
-            self.labelOne.text = @"X";
-            self.labelOne.textColor = [UIColor blueColor];
-        }
-    }
-        i++;
-    }
- */
     if (CGRectContainsPoint(self.labelOne.frame, point)) {
-        self.whichLabelPressed = 1;self.whichPlayerCounter++;
-        if (![self.labelOne.text isEqual:@"X"] && self.whichPlayerCounter % 2 == 0) {
+        self.whichLabelPressed = 1;
+        self.whichPlayerCounter++;
+        if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
             self.labelOne.text = @"O";
             self.labelOne.textColor = [UIColor redColor];
-        } else {
+        } else if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 0){
             self.labelOne.text = @"X";
             self.labelOne.textColor = [UIColor blueColor];
         }
     }
 
     if (CGRectContainsPoint(self.labelTwo.frame, point)) {
-        self.whichLabelPressed = 2;self.whichPlayerCounter++;
-        if (self.whichPlayerCounter % 2 == 0 && self.whichPlayerCounter % 2 < 10) {
+        self.whichLabelPressed = 1;
+        self.whichPlayerCounter++;
+        if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
             self.labelTwo.text = @"O";
             self.labelTwo.textColor = [UIColor redColor];
-        } else {
+        } else if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 == 0){
             self.labelTwo.text = @"X";
             self.labelTwo.textColor = [UIColor blueColor];
         }
     }
+
     if (CGRectContainsPoint(self.labelThree.frame, point)) {
-        self.whichLabelPressed = 3;self.whichPlayerCounter++;
-        if (self.whichPlayerCounter % 2 == 0 && self.whichPlayerCounter % 2 < 10) {
+        self.whichLabelPressed = 1;
+        self.whichPlayerCounter++;
+        if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
             self.labelThree.text = @"O";
             self.labelThree.textColor = [UIColor redColor];
-        } else {
+        } else if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 == 0){
             self.labelThree.text = @"X";
             self.labelThree.textColor = [UIColor blueColor];
         }
     }
+
     if (CGRectContainsPoint(self.labelFour.frame, point)) {
-        self.whichLabelPressed = 4;self.whichPlayerCounter++;
-        if (self.whichPlayerCounter % 2 == 0 && self.whichPlayerCounter % 2 < 10) {
+        self.whichLabelPressed = 1;
+        self.whichPlayerCounter++;
+        if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
             self.labelFour.text = @"O";
             self.labelFour.textColor = [UIColor redColor];
-        } else {
+        } else if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 == 0){
             self.labelFour.text = @"X";
             self.labelFour.textColor = [UIColor blueColor];
         }
     }
+
     if (CGRectContainsPoint(self.labelFive.frame, point)) {
-        self.whichLabelPressed = 5;self.whichPlayerCounter++;
-        if (self.whichPlayerCounter % 2 == 0 && self.whichPlayerCounter % 2 < 10) {
+        self.whichLabelPressed = 1;
+        self.whichPlayerCounter++;
+        if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
             self.labelFive.text = @"O";
             self.labelFive.textColor = [UIColor redColor];
-        } else {
+        } else if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 == 0){
             self.labelFive.text = @"X";
             self.labelFive.textColor = [UIColor blueColor];
         }
     }
+
     if (CGRectContainsPoint(self.labelSix.frame, point)) {
-        self.whichLabelPressed = 6;self.whichPlayerCounter++;
-        if (self.whichPlayerCounter % 2 == 0 && self.whichPlayerCounter % 2 < 10) {
+        self.whichLabelPressed = 1;
+        self.whichPlayerCounter++;
+        if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
             self.labelSix.text = @"O";
             self.labelSix.textColor = [UIColor redColor];
-        } else {
+        } else if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 == 0){
             self.labelSix.text = @"X";
             self.labelSix.textColor = [UIColor blueColor];
         }
     }
+
     if (CGRectContainsPoint(self.labelSeven.frame, point)) {
-        self.whichLabelPressed = 7;self.whichPlayerCounter++;
-        if (self.whichPlayerCounter % 2 == 0 && self.whichPlayerCounter % 2 < 10) {
+        self.whichLabelPressed = 1;
+        self.whichPlayerCounter++;
+        if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
             self.labelSeven.text = @"O";
             self.labelSeven.textColor = [UIColor redColor];
-        } else {
+        } else if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 == 0){
             self.labelSeven.text = @"X";
             self.labelSeven.textColor = [UIColor blueColor];
         }
     }
+
     if (CGRectContainsPoint(self.labelEight.frame, point)) {
-        self.whichLabelPressed = 8;self.whichPlayerCounter++;
-        if (self.whichPlayerCounter % 2 == 0 && self.whichPlayerCounter % 2 < 10) {
+        self.whichLabelPressed = 1;
+        self.whichPlayerCounter++;
+        if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
             self.labelEight.text = @"O";
             self.labelEight.textColor = [UIColor redColor];
-        } else {
+        } else if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 0){
             self.labelEight.text = @"X";
             self.labelEight.textColor = [UIColor blueColor];
         }
     }
+
     if (CGRectContainsPoint(self.labelNine.frame, point)) {
-        self.whichLabelPressed = 9;self.whichPlayerCounter++;
-        if (self.whichPlayerCounter % 2 == 0 && self.whichPlayerCounter % 2 < 10) {
+        self.whichLabelPressed = 1;
+        self.whichPlayerCounter++;
+        if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
             self.labelNine.text = @"O";
             self.labelNine.textColor = [UIColor redColor];
-        } else {
+        } else if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 0){
             self.labelNine.text = @"X";
             self.labelNine.textColor = [UIColor blueColor];
         }
@@ -157,13 +173,13 @@
 - (IBAction)onLabelTapped:(UITapGestureRecognizer *)sender {
     CGPoint point = [sender locationInView:self.view];
     [self findLabelUsingPoint: point];
-    if(self.whichPlayerCounter % 2==0){
-        self.whichPlayerLabel.text = @"Player O";
-    } else{
-        self.whichPlayerLabel.text = @"Player X";
-    }
+//    if(self.whichPlayerCounter % 2==0){
+//        self.whichPlayerLabel.text = @"Player O";
+//    } else{
+//        self.whichPlayerLabel.text = @"Player X";
+//    }
     //NSLog(@"%i",self.whichLabelPressed);
-    //NSLog(@"%i",self.whichPlayerCounter);
+    //NSLog(@"%i",self.whichPlayerCounter)
 }
 
 @end
