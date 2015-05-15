@@ -2,8 +2,8 @@
 //  ViewController.m
 //  TicTacToe
 //
-//  Created by Brent Dady & Chloe on 5/14/15.
-//  Copyright (c) 2015 Brent Dady. All rights reserved.
+//  Created by Brent Dady & Chloe Yang on 5/14/15.
+//  Copyright (c) 2015 Brent Dady & Chloe Yang. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -308,7 +308,7 @@
             self.xPlayerLabel.center = self.xStartingPoint;
 
         }
-    }else if (self.whichPlayerCounter % 2 == 0){
+    } else if (self.whichPlayerCounter % 2 == 0) {
         self.oPlayerLabel.center = pointTwo;
     }
 }
