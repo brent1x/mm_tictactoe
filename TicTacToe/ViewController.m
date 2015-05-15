@@ -294,6 +294,7 @@
         self.labelEight.text = NULL;
         self.labelNine.text = NULL;
         self.whichPlayerCounter = 1;
+        self.whichPlayerLabel.text = @"Player X's Turn";
     }
 }
 
