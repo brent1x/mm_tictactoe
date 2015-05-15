@@ -2,13 +2,14 @@
 //  ViewController.m
 //  TicTacToe
 //
-//  Created by Brent Dady on 5/14/15.
+//  Created by Brent Dady & Chloe on 5/14/15.
 //  Copyright (c) 2015 Brent Dady. All rights reserved.
 //
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIAlertViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *labelOne;
 @property (weak, nonatomic) IBOutlet UILabel *labelTwo;
 @property (weak, nonatomic) IBOutlet UILabel *labelThree;
@@ -23,8 +24,10 @@
 
 @property int whichLabelPressed;
 @property int whichPlayerCounter;
+@property NSString *whoWins;
+
 //@property NSArray* labelArray;
-@property NSSet * labelSet;
+//@property NSSet * labelSet;
 
 @end
 
@@ -32,14 +35,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     self.whichPlayerCounter = 1;
+
     //self.labelArray = [self.labelOne, self.labelT
-    self.labelSet = [NSSet setWithObjects:self.labelOne, self.labelTwo, nil];
+    //self.labelSet = [NSSet setWithObjects:self.labelOne, self.labelTwo, nil];
 
 }
 
-#pragma mark - Tap Logic Methods
+#pragma mark - X & O Logic
 
 - (void)findLabelUsingPoint:(CGPoint)point {
      
@@ -61,125 +64,230 @@
 
     if (CGRectContainsPoint(self.labelOne.frame, point)) {
         self.whichLabelPressed = 1;
-        self.whichPlayerCounter++;
-        if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
+        if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             self.labelOne.text = @"O";
+            self.whichPlayerLabel.text = @"Player X's Turn";
             self.labelOne.textColor = [UIColor redColor];
-        } else if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 0){
+            self.whichPlayerCounter++;
+        } else if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             self.labelOne.text = @"X";
+            self.whichPlayerLabel.text = @"Player O's Turn";
             self.labelOne.textColor = [UIColor blueColor];
+            self.whichPlayerCounter++;
         }
     }
 
     if (CGRectContainsPoint(self.labelTwo.frame, point)) {
-        self.whichLabelPressed = 1;
-        self.whichPlayerCounter++;
-        if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
+        self.whichLabelPressed = 2;
+        if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             self.labelTwo.text = @"O";
+            self.whichPlayerLabel.text = @"Player X's Turn";
             self.labelTwo.textColor = [UIColor redColor];
-        } else if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 == 0){
+            self.whichPlayerCounter++;
+        } else if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             self.labelTwo.text = @"X";
+            self.whichPlayerLabel.text = @"Player O's Turn";
             self.labelTwo.textColor = [UIColor blueColor];
+            self.whichPlayerCounter++;
         }
     }
 
     if (CGRectContainsPoint(self.labelThree.frame, point)) {
-        self.whichLabelPressed = 1;
-        self.whichPlayerCounter++;
-        if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
+        self.whichLabelPressed = 3;
+        if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             self.labelThree.text = @"O";
+            self.whichPlayerLabel.text = @"Player X's Turn";
             self.labelThree.textColor = [UIColor redColor];
-        } else if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 == 0){
+            self.whichPlayerCounter++;
+        } else if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             self.labelThree.text = @"X";
+            self.whichPlayerLabel.text = @"Player O's Turn";
             self.labelThree.textColor = [UIColor blueColor];
+            self.whichPlayerCounter++;
         }
     }
 
     if (CGRectContainsPoint(self.labelFour.frame, point)) {
-        self.whichLabelPressed = 1;
-        self.whichPlayerCounter++;
-        if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
+        self.whichLabelPressed = 4;
+        if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             self.labelFour.text = @"O";
+            self.whichPlayerLabel.text = @"Player X's Turn";
             self.labelFour.textColor = [UIColor redColor];
-        } else if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 == 0){
+            self.whichPlayerCounter++;
+        } else if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             self.labelFour.text = @"X";
+            self.whichPlayerLabel.text = @"Player O's Turn";
             self.labelFour.textColor = [UIColor blueColor];
+            self.whichPlayerCounter++;
         }
     }
 
     if (CGRectContainsPoint(self.labelFive.frame, point)) {
-        self.whichLabelPressed = 1;
-        self.whichPlayerCounter++;
-        if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
+        self.whichLabelPressed = 5;
+        if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             self.labelFive.text = @"O";
+            self.whichPlayerLabel.text = @"Player X's Turn";
             self.labelFive.textColor = [UIColor redColor];
-        } else if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 == 0){
+            self.whichPlayerCounter++;
+        } else if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             self.labelFive.text = @"X";
+            self.whichPlayerLabel.text = @"Player O's Turn";
             self.labelFive.textColor = [UIColor blueColor];
+            self.whichPlayerCounter++;
         }
     }
 
     if (CGRectContainsPoint(self.labelSix.frame, point)) {
-        self.whichLabelPressed = 1;
-        self.whichPlayerCounter++;
-        if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
+        self.whichLabelPressed = 6;
+        if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             self.labelSix.text = @"O";
+            self.whichPlayerLabel.text = @"Player X's Turn";
             self.labelSix.textColor = [UIColor redColor];
-        } else if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 == 0){
+            self.whichPlayerCounter++;
+        } else if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             self.labelSix.text = @"X";
+            self.whichPlayerLabel.text = @"Player O's Turn";
             self.labelSix.textColor = [UIColor blueColor];
+            self.whichPlayerCounter++;
         }
     }
 
     if (CGRectContainsPoint(self.labelSeven.frame, point)) {
-        self.whichLabelPressed = 1;
-        self.whichPlayerCounter++;
-        if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
+        self.whichLabelPressed = 7;
+        if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             self.labelSeven.text = @"O";
+            self.whichPlayerLabel.text = @"Player X's Turn";
             self.labelSeven.textColor = [UIColor redColor];
-        } else if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 == 0){
+            self.whichPlayerCounter++;
+        } else if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             self.labelSeven.text = @"X";
+            self.whichPlayerLabel.text = @"Player O's Turn";
             self.labelSeven.textColor = [UIColor blueColor];
+            self.whichPlayerCounter++;
         }
     }
 
     if (CGRectContainsPoint(self.labelEight.frame, point)) {
-        self.whichLabelPressed = 1;
-        self.whichPlayerCounter++;
-        if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
+        self.whichLabelPressed = 8;
+        if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             self.labelEight.text = @"O";
+            self.whichPlayerLabel.text = @"Player X's Turn";
             self.labelEight.textColor = [UIColor redColor];
-        } else if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 0){
+            self.whichPlayerCounter++;
+        } else if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             self.labelEight.text = @"X";
+            self.whichPlayerLabel.text = @"Player O's Turn";
             self.labelEight.textColor = [UIColor blueColor];
+            self.whichPlayerCounter++;
         }
     }
 
     if (CGRectContainsPoint(self.labelNine.frame, point)) {
-        self.whichLabelPressed = 1;
-        self.whichPlayerCounter++;
-        if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 != 0) {
+        self.whichLabelPressed = 9;
+        if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             self.labelNine.text = @"O";
+            self.whichPlayerLabel.text = @"Player X's Turn";
             self.labelNine.textColor = [UIColor redColor];
-        } else if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 0){
+            self.whichPlayerCounter++;
+        } else if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             self.labelNine.text = @"X";
+            self.whichPlayerLabel.text = @"Player O's Turn";
             self.labelNine.textColor = [UIColor blueColor];
+            self.whichPlayerCounter++;
         }
     }
-    //self.whichPlayerCounter++;
-
+    self.whoWins = [self whoWon];
 }
+
+#pragma mark - Determine Winner Method
+
+- (NSString *)whoWon {
+
+    // Check for wins in the leftmost column and in the topmost row.
+    if (self.labelOne.text.length > 0) {
+        if (((self.labelOne.text == self.labelTwo.text) && (self.labelOne.text == self.labelThree.text)) || ((self.labelOne.text== self.labelFour.text) && (self.labelOne.text == self.labelSeven.text))) {
+            UIAlertView *alertView = [[UIAlertView alloc]init];
+            alertView.title = [NSString stringWithFormat:@"%@ wins!",self.labelOne.text];
+            [alertView addButtonWithTitle:@"Start a new game"];
+            alertView.delegate = self;
+            [alertView show];
+            return self.labelOne.text;
+        }
+        
+    }
+
+    // Check for wins that go through the middle of the board.
+    if (self.labelFive.text.length  > 0) {
+        if (((self.labelFive.text == self.labelFour.text) && (self.labelFive.text == self.labelSix.text)) ||
+            ((self.labelFive.text == self.labelTwo.text) && (self.labelFive.text == self.labelEight.text)) ||
+            ((self.labelFive.text == self.labelOne.text) && (self.labelFive.text == self.labelNine.text)) ||
+            ((self.labelFive.text == self.labelThree.text) && (self.labelFive.text == self.labelSeven.text))) {
+            UIAlertView *alertView = [[UIAlertView alloc]init];
+            alertView.title = [NSString stringWithFormat:@"%@ wins!",self.labelFive.text];
+            [alertView addButtonWithTitle:@"Start a new game"];
+            alertView.delegate = self;
+            [alertView show];
+            return self.labelFive.text;
+            
+        }
+    }
+
+    // Check for win in the rightmost column and in the lowest row.
+    if (self.labelNine.text.length > 0) {
+        if (((self.labelNine.text == self.labelSix.text) && (self.labelNine.text == self.labelThree.text)) ||
+            ((self.labelNine.text == self.labelEight.text) && (self.labelNine.text == self.labelSeven.text))) {
+            UIAlertView *alertView = [[UIAlertView alloc]init];
+            alertView.title = [NSString stringWithFormat:@"%@ wins!",self.labelNine.text];
+            [alertView addButtonWithTitle:@"Start a new game"];
+            alertView.delegate = self;
+            [alertView show];
+            return self.labelNine.text;
+            
+        }
+    }
+    if (self.labelOne.text.length > 0 &&
+        self.labelTwo.text.length > 0 &&
+        self.labelThree.text.length > 0 &&
+        self.labelFour.text.length > 0 &&
+        self.labelFive.text.length > 0 &&
+        self.labelSix.text.length > 0 &&
+        self.labelSeven.text.length > 0 &&
+        self.labelEight.text.length > 0 &&
+        self.labelNine.text.length > 0 ) {
+        NSLog(@"Tie");
+        UIAlertView *alertView = [[UIAlertView alloc]init];
+        alertView.title = @"TIE! NO ONE WINS!";
+        [alertView addButtonWithTitle:@"Start a new game"];
+        alertView.delegate = self;
+        [alertView show];
+        return @"Tie";
+    }
+
+    return @"Not filled";
+}
+
+#pragma mark - Tap Method
 
 - (IBAction)onLabelTapped:(UITapGestureRecognizer *)sender {
     CGPoint point = [sender locationInView:self.view];
     [self findLabelUsingPoint: point];
-//    if(self.whichPlayerCounter % 2==0){
-//        self.whichPlayerLabel.text = @"Player O";
-//    } else{
-//        self.whichPlayerLabel.text = @"Player X";
-//    }
-    //NSLog(@"%i",self.whichLabelPressed);
-    //NSLog(@"%i",self.whichPlayerCounter)
+}
+
+#pragma mark - Reset Game Method
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        self.labelOne.text = NULL;
+        self.labelTwo.text = NULL;
+        self.labelThree.text = NULL;
+        self.labelFour.text = NULL;
+        self.labelFive.text = NULL;
+        self.labelSix.text = NULL;
+        self.labelSeven.text = NULL;
+        self.labelEight.text = NULL;
+        self.labelNine.text = NULL;
+        self.whichPlayerCounter = 1;
+    }
 }
 
 @end
