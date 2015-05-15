@@ -44,30 +44,14 @@
     self.whichPlayerCounter = 1;
     self.oStartingPoint = self.oPlayerLabel.center;
     self.xStartingPoint = self.xPlayerLabel.center;
-    //self.labelArray = [self.labelOne, self.labelT
-    //self.labelSet = [NSSet setWithObjects:self.labelOne, self.labelTwo, nil];
+    // self.labelArray = [self.labelOne, self.labelT
+    // self.labelSet = [NSSet setWithObjects:self.labelOne, self.labelTwo, nil];
 
 }
 
 #pragma mark - X & O Logic
 
 - (void)findLabelUsingPoint:(CGPoint)point {
-     
-//    int i = 1;
-//
-//    for (id item in self.labelSet) {
-//    if (CGRectContainsPoint(item.frame, point)) {
-//        self.whichLabelPressed = i;self.whichPlayerCounter++;
-//        if (self.whichPlayerCounter % 2 == 0) {
-//            self.labelOne.text = @"O";
-//            self.labelOne.textColor = [UIColor redColor];
-//        } else{
-//            self.labelOne.text = @"X";
-//            self.labelOne.textColor = [UIColor blueColor];
-//        }
-//    }
-//        i++;
-//    }
 
     if (CGRectContainsPoint(self.labelOne.frame, point)) {
         self.whichLabelPressed = 1;
@@ -252,6 +236,8 @@
             
         }
     }
+
+    // Check for tie
     if (self.labelOne.text.length > 0 &&
         self.labelTwo.text.length > 0 &&
         self.labelThree.text.length > 0 &&
@@ -269,11 +255,10 @@
         [alertView show];
         return @"Tie";
     }
-
     return @"Not filled";
 }
 
-#pragma mark - Tap Method
+#pragma mark - Tap Methods
 
 - (IBAction)onLabelTapped:(UITapGestureRecognizer *)sender {
     CGPoint point = [sender locationInView:self.view];
@@ -281,6 +266,22 @@
 }
 
 #pragma mark - Reset Game Method
+
+- (IBAction)didPan:(UIPanGestureRecognizer *)sender {
+    CGPoint pointTwo = [sender locationInView:self.view];
+    if (self.whichPlayerCounter % 2 == 1) {
+        self.xPlayerLabel.center = pointTwo;
+        if (sender.state == UIGestureRecognizerStateEnded && (CGRectContainsPoint(self.labelOne.frame, pointTwo)||CGRectContainsPoint(self.labelTwo.frame, pointTwo)||CGRectContainsPoint(self.labelThree.frame, pointTwo)||CGRectContainsPoint(self.labelFour.frame, pointTwo)||CGRectContainsPoint(self.labelFive.frame, pointTwo)||CGRectContainsPoint(self.labelSix.frame, pointTwo)||CGRectContainsPoint(self.labelSeven.frame, pointTwo)||CGRectContainsPoint(self.labelEight.frame, pointTwo)||CGRectContainsPoint(self.labelNine.frame, pointTwo)))
+
+        {
+            // Move the label back & set the text for textlabel
+            self.xPlayerLabel.center = self.xStartingPoint;
+
+        }
+    } else if (self.whichPlayerCounter % 2 == 0) {
+        self.oPlayerLabel.center = pointTwo;
+    }
+}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
@@ -295,22 +296,6 @@
         self.labelNine.text = NULL;
         self.whichPlayerCounter = 1;
         self.whichPlayerLabel.text = @"Player X's Turn";
-    }
-}
-
-- (IBAction)didPan:(UIPanGestureRecognizer *)sender {
-    CGPoint pointTwo = [sender locationInView:self.view];
-    if (self.whichPlayerCounter % 2 == 1) {
-        self.xPlayerLabel.center = pointTwo;
-        if (sender.state == UIGestureRecognizerStateEnded && (CGRectContainsPoint(self.labelOne.frame, pointTwo)||CGRectContainsPoint(self.labelTwo.frame, pointTwo)||CGRectContainsPoint(self.labelThree.frame, pointTwo)||CGRectContainsPoint(self.labelFour.frame, pointTwo)||CGRectContainsPoint(self.labelFive.frame, pointTwo)||CGRectContainsPoint(self.labelSix.frame, pointTwo)||CGRectContainsPoint(self.labelSeven.frame, pointTwo)||CGRectContainsPoint(self.labelEight.frame, pointTwo)||CGRectContainsPoint(self.labelNine.frame, pointTwo)))
-
-        {
-            //move the label back & set the text for textlabel
-            self.xPlayerLabel.center = self.xStartingPoint;
-
-        }
-    } else if (self.whichPlayerCounter % 2 == 0) {
-        self.oPlayerLabel.center = pointTwo;
     }
 }
 
