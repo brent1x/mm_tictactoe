@@ -60,7 +60,7 @@
         self.whichLabelPressed = 1;
         if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
             [self fillLabel:self.labelOne textToBeFilled:@"O"];
-        } else if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 1){
+        } else if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 1 ){
             [self fillLabel:self.labelOne textToBeFilled:@"X"];
         }
     }
@@ -333,8 +333,37 @@
     if (self.remainingTime == 0) {
         [timer invalidate];
         timer = nil;
+        UIAlertView *alertView = [[UIAlertView alloc]init];
+        alertView.title = [NSString stringWithFormat:@"Oops. Time's up!"];
+        [alertView addButtonWithTitle:@"Start a new game"];
+        alertView.delegate = self;
+        [alertView show];
         [self gameReset];
         self.remainingTime = 10;
+    }
+}
+
+#pragma mark - not that intelligent AI method
+
+-(void)fillAnEmptyLabel{
+    if (self.labelFive.text.length == 0) {
+        [self fillLabel:self.labelFive textToBeFilled:@"O"];
+    } else if (self.labelNine.text.length == 0){
+        [self fillLabel:self.labelNine textToBeFilled:@"O"];
+    } else if (self.labelSeven.text.length == 0){
+        [self fillLabel:self.labelSeven textToBeFilled:@"O"];
+    } else if (self.labelThree.text.length == 0){
+        [self fillLabel:self.labelThree textToBeFilled:@"O"];
+    } else if (self.labelEight.text.length == 0){
+        [self fillLabel:self.labelEight textToBeFilled:@"O"];
+    } else if (self.labelSix.text.length == 0){
+        [self fillLabel:self.labelSix textToBeFilled:@"O"];
+    } else if (self.labelFour.text.length == 0){
+        [self fillLabel:self.labelFour textToBeFilled:@"O"];
+    } else if (self.labelTwo.text.length == 0){
+        [self fillLabel:self.labelTwo textToBeFilled:@"O"];
+    } else if (self.labelOne.text.length == 0){
+        [self fillLabel:self.labelOne textToBeFilled:@"O"];
     }
 }
 
