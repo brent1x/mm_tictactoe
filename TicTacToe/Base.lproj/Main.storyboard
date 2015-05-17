@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lJ7-HM-J9f">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -306,7 +307,8 @@
                                         <exclude reference="kgN-4C-5Qg"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="169" y="97" width="62" height="27"/>
                                     <mask key="constraints">
                                         <include reference="QEt-B3-AAa"/>
                                         <include reference="kgN-4C-5Qg"/>
@@ -453,6 +455,20 @@
                             <outletCollection property="gestureRecognizers" destination="82m-f9-fON" appends="YES" id="Jpk-r7-ju1"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="uEF-XG-Eln">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="i4z-UW-zMR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CcB-bx-t2i">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Help">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OH3-sj-2NE" kind="push" id="DdT-uL-TKc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="labelCounting" destination="Qlh-Y2-2k3" id="Ly5-WH-Rl2"/>
                         <outlet property="labelEight" destination="cJs-BX-xWH" id="dgD-ze-pcY"/>
@@ -480,6 +496,80 @@
                         <action selector="didPan:" destination="BYZ-38-t0r" id="yt4-ZX-u2c"/>
                     </connections>
                 </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1627.5" y="390"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="rnc-WX-RVy">
+            <objects>
+                <viewController id="OH3-sj-2NE" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xyr-Hs-caE"/>
+                        <viewControllerLayoutGuide type="bottom" id="glv-qh-DbP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E1j-cb-taE">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYo-Zo-KEX">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="glv-qh-DbP" firstAttribute="top" secondItem="PYo-Zo-KEX" secondAttribute="bottom" id="4Y9-ZU-zX7"/>
+                            <constraint firstItem="PYo-Zo-KEX" firstAttribute="leading" secondItem="E1j-cb-taE" secondAttribute="leadingMargin" constant="-16" id="ch6-JD-SX7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PYo-Zo-KEX" secondAttribute="trailing" constant="-16" id="ewF-Ja-zPt"/>
+                            <constraint firstItem="PYo-Zo-KEX" firstAttribute="top" secondItem="E1j-cb-taE" secondAttribute="topMargin" id="hOS-be-VKm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="PYo-Zo-KEX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ch6-JD-SX7"/>
+                                <exclude reference="ewF-Ja-zPt"/>
+                                <exclude reference="hOS-be-VKm"/>
+                                <exclude reference="4Y9-ZU-zX7"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="PYo-Zo-KEX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="ch6-JD-SX7"/>
+                                <include reference="ewF-Ja-zPt"/>
+                                <include reference="hOS-be-VKm"/>
+                                <include reference="4Y9-ZU-zX7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="3tk-TQ-FMZ"/>
+                    <connections>
+                        <outlet property="webView" destination="PYo-Zo-KEX" id="yBs-e2-mnU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPk-cv-B6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302.5" y="390"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m3A-4d-gH6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lJ7-HM-J9f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pW4-2q-hUB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IfL-hQ-Abf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGD-dC-hhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709.5" y="390"/>
         </scene>
