@@ -144,7 +144,7 @@
 
     // Check for wins in the leftmost column and in the topmost row.
     if (self.labelOne.text.length > 0) {
-        if (((self.labelOne.text == self.labelTwo.text) && (self.labelOne.text == self.labelThree.text)) || ((self.labelOne.text== self.labelFour.text) && (self.labelOne.text == self.labelSeven.text))) {
+        if (([self.labelOne.text isEqualToString:self.labelTwo.text] && [self.labelOne.text isEqualToString:self.labelThree.text]) || ([self.labelOne.text isEqualToString:self.labelFour.text] && [self.labelOne.text isEqualToString:self.labelSeven.text])) {
             UIAlertView *alertView = [[UIAlertView alloc]init];
             alertView.title = [NSString stringWithFormat:@"%@ wins!",self.labelOne.text];
             [alertView addButtonWithTitle:@"Start a new game"];
@@ -157,7 +157,7 @@
 
     // Check for wins that go through the middle of the board.
     if (self.labelFive.text.length > 0) {
-        if (((self.labelFive.text == self.labelFour.text) && (self.labelFive.text == self.labelSix.text)) ||((self.labelFive.text == self.labelTwo.text) && (self.labelFive.text == self.labelEight.text)) ||((self.labelFive.text == self.labelOne.text) && (self.labelFive.text == self.labelNine.text)) ||((self.labelFive.text == self.labelThree.text) && (self.labelFive.text == self.labelSeven.text))) {
+        if (([self.labelFive.text isEqualToString:self.labelFour.text] && [self.labelFive.text isEqualToString:self.labelSix.text]) ||([self.labelFive.text isEqualToString:self.labelTwo.text] && [self.labelFive.text isEqualToString:self.labelEight.text]) ||([self.labelFive.text isEqualToString:self.labelOne.text] && [self.labelFive.text isEqualToString:self.labelNine.text]) ||([self.labelFive.text isEqualToString:self.labelThree.text] && [self.labelFive.text isEqualToString:self.labelSeven.text])) {
             UIAlertView *alertView = [[UIAlertView alloc]init];
             alertView.title = [NSString stringWithFormat:@"%@ wins!",self.labelFive.text];
             [alertView addButtonWithTitle:@"Start a new game"];
@@ -169,7 +169,7 @@
 
     // Check for win in the rightmost column and in the lowest row.
     if (self.labelNine.text.length > 0) {
-        if (((self.labelNine.text == self.labelSix.text) && (self.labelNine.text == self.labelThree.text)) ||((self.labelNine.text == self.labelEight.text) && (self.labelNine.text == self.labelSeven.text))) {
+        if (([self.labelNine.text isEqualToString:self.labelSix.text] && [self.labelNine.text isEqualToString:self.labelThree.text]) ||([self.labelNine.text isEqualToString:self.labelEight.text] && [self.labelNine.text isEqualToString:self.labelSeven.text])) {
             UIAlertView *alertView = [[UIAlertView alloc]init];
             alertView.title = [NSString stringWithFormat:@"%@ wins!",self.labelNine.text];
             [alertView addButtonWithTitle:@"Start a new game"];
