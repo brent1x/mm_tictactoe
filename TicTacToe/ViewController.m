@@ -228,7 +228,7 @@
         if (((self.labelNine.text == self.labelSix.text) && (self.labelNine.text == self.labelThree.text)) ||
             ((self.labelNine.text == self.labelEight.text) && (self.labelNine.text == self.labelSeven.text))) {
             UIAlertView *alertView = [[UIAlertView alloc]init];
-            alertView.title = [NSString stringWithFormat:@"%@ wins!",self.labelNine.text];
+            alertView.title = [NSString stringWithFormat:@"%@ wins!", self.labelNine.text];
             [alertView addButtonWithTitle:@"Start a new game"];
             alertView.delegate = self;
             [alertView show];
@@ -246,7 +246,7 @@
         self.labelSix.text.length > 0 &&
         self.labelSeven.text.length > 0 &&
         self.labelEight.text.length > 0 &&
-        self.labelNine.text.length > 0 ) {
+        self.labelNine.text.length > 0) {
         NSLog(@"Tie");
         UIAlertView *alertView = [[UIAlertView alloc]init];
         alertView.title = @"TIE! NO ONE WINS!";
@@ -269,14 +269,13 @@
 
 - (IBAction)didPan:(UIPanGestureRecognizer *)sender {
     CGPoint pointTwo = [sender locationInView:self.view];
+
     if (self.whichPlayerCounter % 2 == 1) {
         self.xPlayerLabel.center = pointTwo;
-        if (sender.state == UIGestureRecognizerStateEnded && (CGRectContainsPoint(self.labelOne.frame, pointTwo)||CGRectContainsPoint(self.labelTwo.frame, pointTwo)||CGRectContainsPoint(self.labelThree.frame, pointTwo)||CGRectContainsPoint(self.labelFour.frame, pointTwo)||CGRectContainsPoint(self.labelFive.frame, pointTwo)||CGRectContainsPoint(self.labelSix.frame, pointTwo)||CGRectContainsPoint(self.labelSeven.frame, pointTwo)||CGRectContainsPoint(self.labelEight.frame, pointTwo)||CGRectContainsPoint(self.labelNine.frame, pointTwo)))
-
+        if (sender.state == UIGestureRecognizerStateEnded && (CGRectContainsPoint(self.labelOne.frame, pointTwo) || CGRectContainsPoint(self.labelTwo.frame, pointTwo) || CGRectContainsPoint(self.labelThree.frame, pointTwo) || CGRectContainsPoint(self.labelFour.frame, pointTwo) || CGRectContainsPoint(self.labelFive.frame, pointTwo) || CGRectContainsPoint(self.labelSix.frame, pointTwo) || CGRectContainsPoint(self.labelSeven.frame, pointTwo) || CGRectContainsPoint(self.labelEight.frame, pointTwo) || CGRectContainsPoint(self.labelNine.frame, pointTwo)))
         {
             // Move the label back & set the text for textlabel
             self.xPlayerLabel.center = self.xStartingPoint;
-
         }
     } else if (self.whichPlayerCounter % 2 == 0) {
         self.oPlayerLabel.center = pointTwo;

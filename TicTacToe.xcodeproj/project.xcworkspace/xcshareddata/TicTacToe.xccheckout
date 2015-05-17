@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>3BE96A98-1618-4558-9A2C-0D32A2419BE0</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>TicTacToe</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A215F3BCC74A81E90169F51E29C4294829DB94B8</key>
 		<string>https://github.com/brent1x/mm_tictactoe.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TicTacToe.xcodeproj/project.xcworkspace</string>
+	<string>TicTacToe.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A215F3BCC74A81E90169F51E29C4294829DB94B8</key>
