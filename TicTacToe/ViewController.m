@@ -20,10 +20,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelEight;
 @property (weak, nonatomic) IBOutlet UILabel *labelNine;
 @property (weak, nonatomic) IBOutlet UILabel *labelCounting;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *whichPlayerLabel;
 
-@property int whichLabelPressed;
 @property int whichPlayerCounter;
 @property NSString *whoWins;
 @property CGPoint oStartingPoint;
@@ -57,83 +57,101 @@
 - (void)findLabelUsingPoint:(CGPoint)point {
 
     if (CGRectContainsPoint(self.labelOne.frame, point)) {
-        self.whichLabelPressed = 1;
-        if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
+        if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 0 && self.segmentedControlButton.selectedSegmentIndex == 0) {
             [self fillLabel:self.labelOne textToBeFilled:@"O"];
-        } else if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 1 ){
+        } else if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 0){
             [self fillLabel:self.labelOne textToBeFilled:@"X"];
+        } else if (self.labelOne.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 1){
+            [self fillLabel:self.labelOne textToBeFilled:@"X"];
+            [self fillAnEmptyLabel];
         }
     }
 
     if (CGRectContainsPoint(self.labelTwo.frame, point)) {
-        self.whichLabelPressed = 2;
-        if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
+        if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 == 0 && self.segmentedControlButton.selectedSegmentIndex == 0) {
             [self fillLabel:self.labelTwo textToBeFilled:@"O"];
-        } else if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 == 1){
+        } else if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 0){
             [self fillLabel:self.labelTwo textToBeFilled:@"X"];
+        } else if (self.labelTwo.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 1){
+            [self fillLabel:self.labelTwo textToBeFilled:@"X"];
+            [self fillAnEmptyLabel];
         }
     }
 
     if (CGRectContainsPoint(self.labelThree.frame, point)) {
-        self.whichLabelPressed = 3;
-        if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
+        if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 == 0 && self.segmentedControlButton.selectedSegmentIndex == 0) {
             [self fillLabel:self.labelThree textToBeFilled:@"O"];
-        } else if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 == 1){
+        } else if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 0){
             [self fillLabel:self.labelThree textToBeFilled:@"X"];
+        } else if (self.labelThree.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 1){
+            [self fillLabel:self.labelThree textToBeFilled:@"X"];
+            [self fillAnEmptyLabel];
         }
     }
 
     if (CGRectContainsPoint(self.labelFour.frame, point)) {
-        self.whichLabelPressed = 4;
-        if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
+        if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 == 0 && self.segmentedControlButton.selectedSegmentIndex == 0) {
             [self fillLabel:self.labelFour textToBeFilled:@"O"];
-        } else if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 == 1){
+        } else if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 0){
             [self fillLabel:self.labelFour textToBeFilled:@"X"];
+        } else if (self.labelFour.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 1){
+            [self fillLabel:self.labelFour textToBeFilled:@"X"];
+            [self fillAnEmptyLabel];
         }
     }
 
     if (CGRectContainsPoint(self.labelFive.frame, point)) {
-        self.whichLabelPressed = 5;
-        if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
+        if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 == 0 && self.segmentedControlButton.selectedSegmentIndex == 0) {
             [self fillLabel:self.labelFive textToBeFilled:@"O"];
-        } else if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 == 1){
+        } else if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 0){
             [self fillLabel:self.labelFive textToBeFilled:@"X"];
+        } else if (self.labelFive.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 1){
+            [self fillLabel:self.labelFive textToBeFilled:@"X"];
+            [self fillAnEmptyLabel];
         }
     }
 
     if (CGRectContainsPoint(self.labelSix.frame, point)) {
-        self.whichLabelPressed = 6;
-        if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
+        if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 == 0 && self.segmentedControlButton.selectedSegmentIndex == 0) {
             [self fillLabel:self.labelSix textToBeFilled:@"O"];
-        } else if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 == 1){
+        } else if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 0){
             [self fillLabel:self.labelSix textToBeFilled:@"X"];
+        } else if (self.labelSix.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 1){
+            [self fillLabel:self.labelSix textToBeFilled:@"X"];
+            [self fillAnEmptyLabel];
         }
     }
 
     if (CGRectContainsPoint(self.labelSeven.frame, point)) {
-        self.whichLabelPressed = 7;
-        if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
+        if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 == 0 && self.segmentedControlButton.selectedSegmentIndex == 0) {
             [self fillLabel:self.labelSeven textToBeFilled:@"O"];
-        } else if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 == 1){
+        } else if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 0){
             [self fillLabel:self.labelSeven textToBeFilled:@"X"];
+        } else if (self.labelSeven.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 1){
+            [self fillLabel:self.labelSeven textToBeFilled:@"X"];
+            [self fillAnEmptyLabel];
         }
     }
 
     if (CGRectContainsPoint(self.labelEight.frame, point)) {
-        self.whichLabelPressed = 8;
-        if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
+        if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 0 && self.segmentedControlButton.selectedSegmentIndex == 0) {
             [self fillLabel:self.labelEight textToBeFilled:@"O"];
-        } else if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 1){
+        } else if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 0){
             [self fillLabel:self.labelEight textToBeFilled:@"X"];
+        } else if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 1){
+            [self fillLabel:self.labelEight textToBeFilled:@"X"];
+            [self fillAnEmptyLabel];
         }
-    };
-    //NSLog(@"%f", [self.labelNine.frame ]);
+    }
+
     if (CGRectContainsPoint(self.labelNine.frame, point)) {
-        self.whichLabelPressed = 9;
-        if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
+        if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 0 && self.segmentedControlButton.selectedSegmentIndex == 0) {
             [self fillLabel:self.labelNine textToBeFilled:@"O"];
-        } else if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 1){
+        } else if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 0){
             [self fillLabel:self.labelNine textToBeFilled:@"X"];
+        } else if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 1 && self.segmentedControlButton.selectedSegmentIndex == 1){
+            [self fillLabel:self.labelNine textToBeFilled:@"X"];
+            [self fillAnEmptyLabel];
         }
     }
 }

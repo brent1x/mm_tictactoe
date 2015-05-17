@@ -515,6 +515,7 @@
                         <outlet property="labelThree" destination="H8m-f4-8D6" id="Xaa-bs-laO"/>
                         <outlet property="labelTwo" destination="fnb-Is-WJP" id="Sgw-M9-doz"/>
                         <outlet property="oPlayerLabel" destination="4Li-Wo-jfB" id="EAn-3O-VVY"/>
+                        <outlet property="segmentedControlButton" destination="QQ4-b5-WDm" id="kjE-9Q-9zh"/>
                         <outlet property="whichPlayerLabel" destination="lTr-tJ-Lff" id="Wtk-T2-zJI"/>
                         <outlet property="xPlayerLabel" destination="4xk-Yq-Xxe" id="UbZ-Sk-1HO"/>
                     </connections>
