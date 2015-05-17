@@ -126,8 +126,8 @@
         } else if (self.labelEight.text.length == 0 && self.whichPlayerCounter % 2 == 1){
             [self fillLabel:self.labelEight textToBeFilled:@"X"];
         }
-    }
-
+    };
+    //NSLog(@"%f", [self.labelNine.frame ]);
     if (CGRectContainsPoint(self.labelNine.frame, point)) {
         self.whichLabelPressed = 9;
         if (self.labelNine.text.length == 0 && self.whichPlayerCounter % 2 == 0) {
@@ -157,10 +157,7 @@
 
     // Check for wins that go through the middle of the board.
     if (self.labelFive.text.length > 0) {
-        if (((self.labelFive.text == self.labelFour.text) && (self.labelFive.text == self.labelSix.text)) ||
-            ((self.labelFive.text == self.labelTwo.text) && (self.labelFive.text == self.labelEight.text)) ||
-            ((self.labelFive.text == self.labelOne.text) && (self.labelFive.text == self.labelNine.text)) ||
-            ((self.labelFive.text == self.labelThree.text) && (self.labelFive.text == self.labelSeven.text))) {
+        if (((self.labelFive.text == self.labelFour.text) && (self.labelFive.text == self.labelSix.text)) ||((self.labelFive.text == self.labelTwo.text) && (self.labelFive.text == self.labelEight.text)) ||((self.labelFive.text == self.labelOne.text) && (self.labelFive.text == self.labelNine.text)) ||((self.labelFive.text == self.labelThree.text) && (self.labelFive.text == self.labelSeven.text))) {
             UIAlertView *alertView = [[UIAlertView alloc]init];
             alertView.title = [NSString stringWithFormat:@"%@ wins!",self.labelFive.text];
             [alertView addButtonWithTitle:@"Start a new game"];
@@ -172,8 +169,7 @@
 
     // Check for win in the rightmost column and in the lowest row.
     if (self.labelNine.text.length > 0) {
-        if (((self.labelNine.text == self.labelSix.text) && (self.labelNine.text == self.labelThree.text)) ||
-            ((self.labelNine.text == self.labelEight.text) && (self.labelNine.text == self.labelSeven.text))) {
+        if (((self.labelNine.text == self.labelSix.text) && (self.labelNine.text == self.labelThree.text)) ||((self.labelNine.text == self.labelEight.text) && (self.labelNine.text == self.labelSeven.text))) {
             UIAlertView *alertView = [[UIAlertView alloc]init];
             alertView.title = [NSString stringWithFormat:@"%@ wins!",self.labelNine.text];
             [alertView addButtonWithTitle:@"Start a new game"];
@@ -184,15 +180,7 @@
     }
 
     // Check for tie
-    if (self.labelOne.text.length > 0 &&
-        self.labelTwo.text.length > 0 &&
-        self.labelThree.text.length > 0 &&
-        self.labelFour.text.length > 0 &&
-        self.labelFive.text.length > 0 &&
-        self.labelSix.text.length > 0 &&
-        self.labelSeven.text.length > 0 &&
-        self.labelEight.text.length > 0 &&
-        self.labelNine.text.length > 0 ) {
+    if (self.labelOne.text.length > 0 && self.labelTwo.text.length > 0 && self.labelThree.text.length > 0 && self.labelFour.text.length > 0 &&self.labelFive.text.length > 0 && self.labelSix.text.length > 0 && self.labelSeven.text.length > 0 && self.labelEight.text.length > 0 && self.labelNine.text.length > 0 ) {
         UIAlertView *alertView = [[UIAlertView alloc]init];
         alertView.title = @"TIE! NO ONE WINS!";
         [alertView addButtonWithTitle:@"Start a new game"];
@@ -304,6 +292,7 @@
     self.whichPlayerCounter = 1;
     self.whichPlayerLabel.text = @"Player X's Turn";
     self.whichPlayerCounter = 1;
+    self.labelCounting.text = @"10";
     [self.countdownTimer invalidate];
 }
 
