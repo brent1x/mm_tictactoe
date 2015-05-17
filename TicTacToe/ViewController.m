@@ -200,78 +200,78 @@
 
 #pragma mark - Reset Game Method
 
-//- (IBAction)didPan:(UIPanGestureRecognizer *)sender {
-//    CGPoint pointTwo = [sender locationInView:self.view];
-//    if (self.whichPlayerCounter % 2 == 1) {
-//        self.xPlayerLabel.center = pointTwo;
-//        if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelOne.frame, pointTwo))
-//
-//        {
-//            // Move the label back & set the text for textlabel
-//            [self fillLabel:self.labelOne textToBeFilled:@"X"];
-//            self.xPlayerLabel.center = self.xStartingPoint;
-//
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelTwo.frame, pointTwo)){
-//            [self fillLabel:self.labelTwo textToBeFilled:@"X"];
-//            self.xPlayerLabel.center = self.xStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelThree.frame, pointTwo)){
-//            [self fillLabel:self.labelThree textToBeFilled:@"X"];
-//            self.xPlayerLabel.center = self.xStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFour.frame, pointTwo)){
-//            [self fillLabel:self.labelFour textToBeFilled:@"X"];
-//            self.xPlayerLabel.center = self.xStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFive.frame, pointTwo)){
-//            [self fillLabel:self.labelFive textToBeFilled:@"X"];
-//            self.xPlayerLabel.center = self.xStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSix.frame, pointTwo)){
-//            [self fillLabel:self.labelSix textToBeFilled:@"X"];
-//            self.xPlayerLabel.center = self.xStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSeven.frame, pointTwo)){
-//            [self fillLabel:self.labelSeven textToBeFilled:@"X"];
-//            self.xPlayerLabel.center = self.xStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelEight.frame, pointTwo)){
-//            [self fillLabel:self.labelEight textToBeFilled:@"X"];
-//            self.xPlayerLabel.center = self.xStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelNine.frame, pointTwo)){
-//            [self fillLabel:self.labelNine textToBeFilled:@"X"];
-//            self.xPlayerLabel.center = self.xStartingPoint;
-//        }
-//    } else if (self.whichPlayerCounter % 2 == 0) {
-//        self.oPlayerLabel.center = pointTwo;
-//        if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelOne.frame, pointTwo))
-//
-//        {
-//            // Move the label back & set the text for textlabel
-//            [self fillLabel:self.labelOne textToBeFilled:@"O"];
-//            self.oPlayerLabel.center = self.oStartingPoint;
-//
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelTwo.frame, pointTwo)){
-//            [self fillLabel:self.labelTwo textToBeFilled:@"O"];
-//            self.oPlayerLabel.center = self.oStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelThree.frame, pointTwo)){
-//            [self fillLabel:self.labelThree textToBeFilled:@"O"];
-//            self.oPlayerLabel.center = self.oStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFour.frame, pointTwo)){
-//            [self fillLabel:self.labelFour textToBeFilled:@"O"];
-//            self.oPlayerLabel.center = self.oStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFive.frame, pointTwo)){
-//            [self fillLabel:self.labelFive textToBeFilled:@"O"];
-//            self.oPlayerLabel.center = self.oStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSix.frame, pointTwo)){
-//            [self fillLabel:self.labelSix textToBeFilled:@"O"];
-//            self.oPlayerLabel.center = self.oStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSeven.frame, pointTwo)){
-//            [self fillLabel:self.labelSeven textToBeFilled:@"O"];
-//            self.oPlayerLabel.center = self.oStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelEight.frame, pointTwo)){
-//            [self fillLabel:self.labelEight textToBeFilled:@"O"];
-//            self.oPlayerLabel.center = self.oStartingPoint;
-//        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelNine.frame, pointTwo)){
-//            [self fillLabel:self.labelNine textToBeFilled:@"O"];
-//            self.oPlayerLabel.center = self.oStartingPoint;
-//        }
-//    }
-//}
+- (IBAction)didPan:(UIPanGestureRecognizer *)sender {
+    CGPoint pointTwo = [sender locationInView:self.view];
+    if (self.whichPlayerCounter % 2 == 1) {
+        self.xPlayerLabel.center = pointTwo;
+        if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelOne.frame, pointTwo))
+
+        {
+            // Move the label back & set the text for textlabel
+            [self fillLabel:self.labelOne textToBeFilled:@"X"];
+            self.xPlayerLabel.center = self.xStartingPoint;
+
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelTwo.frame, pointTwo)){
+            [self fillLabel:self.labelTwo textToBeFilled:@"X"];
+            self.xPlayerLabel.center = self.xStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelThree.frame, pointTwo)){
+            [self fillLabel:self.labelThree textToBeFilled:@"X"];
+            self.xPlayerLabel.center = self.xStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFour.frame, pointTwo)){
+            [self fillLabel:self.labelFour textToBeFilled:@"X"];
+            self.xPlayerLabel.center = self.xStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFive.frame, pointTwo)){
+            [self fillLabel:self.labelFive textToBeFilled:@"X"];
+            self.xPlayerLabel.center = self.xStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSix.frame, pointTwo)){
+            [self fillLabel:self.labelSix textToBeFilled:@"X"];
+            self.xPlayerLabel.center = self.xStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSeven.frame, pointTwo)){
+            [self fillLabel:self.labelSeven textToBeFilled:@"X"];
+            self.xPlayerLabel.center = self.xStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelEight.frame, pointTwo)){
+            [self fillLabel:self.labelEight textToBeFilled:@"X"];
+            self.xPlayerLabel.center = self.xStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelNine.frame, pointTwo)){
+            [self fillLabel:self.labelNine textToBeFilled:@"X"];
+            self.xPlayerLabel.center = self.xStartingPoint;
+        }
+    } else if (self.whichPlayerCounter % 2 == 0) {
+        self.oPlayerLabel.center = pointTwo;
+        if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelOne.frame, pointTwo))
+
+        {
+            // Move the label back & set the text for textlabel
+            [self fillLabel:self.labelOne textToBeFilled:@"O"];
+            self.oPlayerLabel.center = self.oStartingPoint;
+
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelTwo.frame, pointTwo)){
+            [self fillLabel:self.labelTwo textToBeFilled:@"O"];
+            self.oPlayerLabel.center = self.oStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelThree.frame, pointTwo)){
+            [self fillLabel:self.labelThree textToBeFilled:@"O"];
+            self.oPlayerLabel.center = self.oStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFour.frame, pointTwo)){
+            [self fillLabel:self.labelFour textToBeFilled:@"O"];
+            self.oPlayerLabel.center = self.oStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFive.frame, pointTwo)){
+            [self fillLabel:self.labelFive textToBeFilled:@"O"];
+            self.oPlayerLabel.center = self.oStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSix.frame, pointTwo)){
+            [self fillLabel:self.labelSix textToBeFilled:@"O"];
+            self.oPlayerLabel.center = self.oStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSeven.frame, pointTwo)){
+            [self fillLabel:self.labelSeven textToBeFilled:@"O"];
+            self.oPlayerLabel.center = self.oStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelEight.frame, pointTwo)){
+            [self fillLabel:self.labelEight textToBeFilled:@"O"];
+            self.oPlayerLabel.center = self.oStartingPoint;
+        }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelNine.frame, pointTwo)){
+            [self fillLabel:self.labelNine textToBeFilled:@"O"];
+            self.oPlayerLabel.center = self.oStartingPoint;
+        }
+    }
+}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
