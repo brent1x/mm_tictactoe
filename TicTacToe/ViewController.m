@@ -154,6 +154,7 @@
             [self fillAnEmptyLabel];
         }
     }
+
 }
 
 #pragma mark - Determine Winner Method
@@ -228,31 +229,58 @@
             // Move the label back & set the text for textlabel
             [self fillLabel:self.labelOne textToBeFilled:@"X"];
             self.xPlayerLabel.center = self.xStartingPoint;
+            if (self.segmentedControlButton.selectedSegmentIndex == 1) {
+                [self fillAnEmptyLabel];
+            }
 
         }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelTwo.frame, pointTwo)){
             [self fillLabel:self.labelTwo textToBeFilled:@"X"];
             self.xPlayerLabel.center = self.xStartingPoint;
+            if (self.segmentedControlButton.selectedSegmentIndex == 1) {
+                [self fillAnEmptyLabel];
+            }
         }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelThree.frame, pointTwo)){
             [self fillLabel:self.labelThree textToBeFilled:@"X"];
             self.xPlayerLabel.center = self.xStartingPoint;
+            if (self.segmentedControlButton.selectedSegmentIndex == 1) {
+                [self fillAnEmptyLabel];
+            }
         }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFour.frame, pointTwo)){
             [self fillLabel:self.labelFour textToBeFilled:@"X"];
             self.xPlayerLabel.center = self.xStartingPoint;
+            if (self.segmentedControlButton.selectedSegmentIndex == 1) {
+                [self fillAnEmptyLabel];
+            }
         }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelFive.frame, pointTwo)){
             [self fillLabel:self.labelFive textToBeFilled:@"X"];
             self.xPlayerLabel.center = self.xStartingPoint;
+            if (self.segmentedControlButton.selectedSegmentIndex == 1) {
+                [self fillAnEmptyLabel];
+            }
         }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSix.frame, pointTwo)){
             [self fillLabel:self.labelSix textToBeFilled:@"X"];
             self.xPlayerLabel.center = self.xStartingPoint;
+            if (self.segmentedControlButton.selectedSegmentIndex == 1) {
+                [self fillAnEmptyLabel];
+            }
         }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelSeven.frame, pointTwo)){
             [self fillLabel:self.labelSeven textToBeFilled:@"X"];
             self.xPlayerLabel.center = self.xStartingPoint;
+            if (self.segmentedControlButton.selectedSegmentIndex == 1) {
+                [self fillAnEmptyLabel];
+            }
         }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelEight.frame, pointTwo)){
             [self fillLabel:self.labelEight textToBeFilled:@"X"];
             self.xPlayerLabel.center = self.xStartingPoint;
+            if (self.segmentedControlButton.selectedSegmentIndex == 1) {
+                [self fillAnEmptyLabel];
+            }
         }else if (sender.state == UIGestureRecognizerStateEnded && CGRectContainsPoint(self.labelNine.frame, pointTwo)){
             [self fillLabel:self.labelNine textToBeFilled:@"X"];
             self.xPlayerLabel.center = self.xStartingPoint;
+            if (self.segmentedControlButton.selectedSegmentIndex == 1) {
+                [self fillAnEmptyLabel];
+            }
         }
     } else if (self.whichPlayerCounter % 2 == 0) {
         self.oPlayerLabel.center = pointTwo;
@@ -321,7 +349,7 @@
         theLabel.text = [NSString stringWithFormat:@"%@", theString];
         self.whichPlayerLabel.text = @"Player O's Turn";
         theLabel.textColor = [UIColor blueColor];
-    } else if ([theString isEqualToString:@"O"]){
+    }else if ([theString isEqualToString:@"O"]){
         theLabel.text = [NSString stringWithFormat:@"%@", theString];
         self.whichPlayerLabel.text = @"Player X's Turn";
         theLabel.textColor = [UIColor redColor];
